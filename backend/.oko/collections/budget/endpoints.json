@@ -11,19 +11,24 @@
       "created_at": "2025-12-27T13:27:45.056943"
     },
     "GetById": {
-      "url": "{{base_url}}/api/budgets/1",
+      "url": "{{base_url}}/api/budgets/{{budget_id}}",
       "method": "GET",
       "created_at": "2025-12-27T13:34:17.215122"
     },
     "UpdateById": {
-      "url": "{{base_url}}/api/budgets/2",
+      "url": "{{base_url}}/api/budgets/{{budget_id}}",
       "method": "PUT",
       "created_at": "2025-12-27T13:48:38.682112"
     },
     "DeleteById": {
-      "url": "{{base_url}}/api/budgets/1",
+      "url": "{{base_url}}/api/budgets/{{budget_id}}",
       "method": "DELETE",
       "created_at": "2025-12-27T13:48:53.744520"
+    },
+    "expense": {
+      "url": "GetAll",
+      "method": "GET",
+      "created_at": "2026-01-07T15:52:42.751934"
     }
   }
 }
