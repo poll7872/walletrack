@@ -1,0 +1,19 @@
+{
+  "endpoints": {
+    "CreateAccount": {
+      "url": "{{base_url}}/api/auth/create-account",
+      "method": "POST",
+      "created_at": "2026-01-08T12:21:12.454420"
+    },
+    "ConfirmAccount": {
+      "url": "{{base_url}}/api/auth/confirm-account",
+      "method": "POST",
+      "created_at": "2026-01-08T15:24:19.767037"
+    },
+    "Login": {
+      "url": "{{base_url}}/api/auth/login",
+      "method": "POST",
+      "created_at": "2026-01-08T20:25:23.242745"
+    }
+  }
+}
