@@ -2,6 +2,6 @@ import { rateLimit } from "express-rate-limit";
 
 export const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
-  limit: 5, // limit each IP to 5 requests per windowMs
+  limit: process.env.NODE_ENV === "production" ? 10 : 100,
   message: { error: "Too many requests, please try again later." },
 });
