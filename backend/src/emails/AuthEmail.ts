@@ -8,15 +8,18 @@ type EmailType = {
   token: string;
 };
 
-transport.use("compile", expressHandlebars({
-  viewEngine: {
-    extname: ".hbs",
-    partialsDir: path.resolve("./src/emails/partials"),
-    layoutsDir: path.resolve("./src/emails/templates"),
-  },
-  viewPath: path.resolve("./src/emails/templates"),
-  extName: ".hbs",
-}));
+transport.use(
+  "compile",
+  expressHandlebars({
+    viewEngine: {
+      extname: ".hbs",
+      partialsDir: path.resolve("./src/emails/partials"),
+      layoutsDir: path.resolve("./src/emails/templates"),
+    },
+    viewPath: path.resolve("./src/emails/templates"),
+    extName: ".hbs",
+  }),
+);
 
 export class AuthEmail {
   static sendConfirmationEmail = async (user: EmailType) => {
@@ -31,7 +34,7 @@ export class AuthEmail {
       },
     } as any);
 
-    console.log("Confirmation email sent: ", (email as any).messageId);
+    //console.log("Confirmation email sent: ", (email as any).messageId);
   };
 
   static sendPasswordResetToken = async (user: EmailType) => {
@@ -46,6 +49,6 @@ export class AuthEmail {
       },
     } as any);
 
-    console.log("Password reset email sent: ", (email as any).messageId);
+    //console.log("Password reset email sent: ", (email as any).messageId);
   };
 }
