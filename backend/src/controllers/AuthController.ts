@@ -19,7 +19,13 @@ export class AuthController {
     try {
       const user = await User.create(req.body);
       user.password = await hashPassword(password);
-      user.token = generateToken();
+      const token = generateToken();
+      user.token = token;
+
+      if (process.env.NODE_ENV !== "production") {
+        (globalThis as any).walletrackConfirmationToken = token;
+      }
+
       await user.save();
 
       await AuthEmail.sendConfirmationEmail({
@@ -28,7 +34,7 @@ export class AuthController {
         token: user.token,
       });
 
-      res.status(200).json({ message: "Account created successfully" });
+      res.status(201).json({ message: "Account created successfully" });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Error creating account" });
