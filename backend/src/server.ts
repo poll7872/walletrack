@@ -3,19 +3,19 @@ import db from "./config/db";
 import budgetRouter from "./routes/budgetRouter";
 import authRouter from "./routes/authRouter";
 
-const app = express();
-
-// Conectar a la base de datos
-async function connectDB() {
+export async function connectDB() {
   try {
     await db.authenticate();
-    await db.sync();
-    console.log("Conexión a la base de datos exitosa");
+    db.sync();
+    // console.log( 'Conexión a la bd con exito' )
   } catch (error) {
-    console.log("Error al conectar a la base de datos:", error);
+    // console.log(error)
+    // console.log( 'fallo la conexión a la bd' )
   }
 }
 connectDB();
+
+const app = express();
 
 app.use(express.json());
 
