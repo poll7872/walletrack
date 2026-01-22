@@ -16,7 +16,6 @@ export const validateBudgetId = async (
   next: NextFunction,
 ) => {
   await param("budgetId")
-    .isInt()
     .custom((value) => value > 0)
     .withMessage("Invalid budget ID")
     .run(req);
