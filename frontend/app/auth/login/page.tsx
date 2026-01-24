@@ -19,10 +19,13 @@ export default function LoginPage() {
 
       <nav className="mt-8 text-center text-sm">
         <p className="text-slate-600">
-            ¿No tienes una cuenta?{' '}
-            <Link href="/auth/register" className="font-bold text-green-600 hover:text-green-700">
-                Crear una
-            </Link>
+          ¿No tienes una cuenta?{" "}
+          <Link
+            href="/auth/register"
+            className="font-bold text-green-600 hover:text-green-700"
+          >
+            Crear una
+          </Link>
         </p>
       </nav>
     </>
