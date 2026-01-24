@@ -6,9 +6,9 @@ export default function AuthLayout({
   return (
     <>
       <div className="lg:grid lg:grid-cols-2 lg:min-h-screen">
-        <div className="bg-slate-900 flex flex-col justify-center items-center p-10">
+        <div className="bg-slate-900 flex flex-col justify-center items-center p-5">
           <Logo />
-          <p className="text-white mt-8 text-center text-lg">
+          <p className="text-white mt-2 text-center text-lg">
             Toma el control de tus finanzas personales.
           </p>
         </div>
