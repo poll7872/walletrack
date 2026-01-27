@@ -31,6 +31,7 @@ export class AuthEmail {
       context: {
         name: user.name,
         token: user.token,
+        frontendUrl: process.env.FRONTEND_URL,
       },
     } as any);
 
@@ -46,6 +47,7 @@ export class AuthEmail {
       context: {
         name: user.name,
         token: user.token,
+        frontendUrl: process.env.FRONTEND_URL,
       },
     } as any);
 
