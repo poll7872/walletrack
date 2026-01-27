@@ -2,14 +2,21 @@
 
 import { register } from "@/actions/create-account-action";
 import { useActionState } from "react";
+import { ErrorMessage } from "../ui/ErrorMessage";
+import { SuccessMessage } from "../ui/SuccessMessage";
 
 export const RegisterForm = () => {
   const [state, dispatch] = useActionState(register, {
     errors: [],
+    success: "",
   });
-  console.log(state);
+
   return (
     <form className="mt-10 space-y-6" noValidate action={dispatch}>
+      {state.errors.map((error, index) => (
+        <ErrorMessage key={index}>{error}</ErrorMessage>
+      ))}
+      {state.success && <SuccessMessage>{state.success}</SuccessMessage>}
       <div className="relative">
         <input
           id="name"
