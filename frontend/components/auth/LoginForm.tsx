@@ -1,9 +1,24 @@
 "use client";
+import { authenticate } from "@/actions/authenticate-user-action";
 import Link from "next/link";
+import { useActionState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 export const LoginForm = () => {
+  const [state, dispatch] = useActionState(authenticate, {
+    errors: [],
+  });
+
+  useEffect(() => {
+    if (state.errors) {
+      state.errors.forEach((error) => {
+        toast.error(error, { autoClose: 4000 });
+      });
+    }
+  }, [state]);
+
   return (
-    <form className="mt-10 space-y-6" noValidate>
+    <form className="mt-10 space-y-6" action={dispatch} noValidate>
       <div className="relative">
         <input
           id="email"
