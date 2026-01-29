@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 export const ConfirmAccountForm = () => {
   const router = useRouter();
   const [token, setToken] = useState("");
-  const [state, distpatch] = useActionState(confirmAccount, {
+  const [state, dispatch] = useActionState(confirmAccount, {
     errors: [],
     success: "",
   });
@@ -35,7 +35,7 @@ export const ConfirmAccountForm = () => {
     const formData = new FormData();
     formData.append("token", value);
     startTransition(() => {
-      distpatch(formData);
+      dispatch(formData);
     });
   };
 
@@ -43,12 +43,12 @@ export const ConfirmAccountForm = () => {
     <>
       <div className="flex justify-center gap-4 my-8">
         <PinInput value={token} onChange={setToken} onComplete={handleComplete}>
-          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder:white" />
-          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder:white" />
-          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder:white" />
-          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder:white" />
-          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder:white" />
-          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder:white" />
+          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder-white" />
+          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder-white" />
+          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder-white" />
+          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder-white" />
+          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder-white" />
+          <PinInputField className="h-10 w-10 border border-gray-300 shadow rounded-lg text-center placeholder-white" />
         </PinInput>
       </div>
     </>
