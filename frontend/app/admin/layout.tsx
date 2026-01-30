@@ -4,6 +4,8 @@ import { ToastNotification } from "@/components/ui/ToastNotification";
 import { verifySession } from "@/src/auth/dal";
 import Link from "next/link";
 
+export const revalidate = 0;
+
 export default async function AdminLayout({
   children,
 }: Readonly<{
@@ -12,9 +14,9 @@ export default async function AdminLayout({
   const { user } = await verifySession();
   return (
     <>
-      <header className="bg-purple-950 py-5">
+      <header className="bg-slate-900 py-5">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row justify-between items-center">
-          <div className="w-96">
+          <div className="w-64">
             <Link href={"/admin"}>
               <Logo />
             </Link>
@@ -23,14 +25,14 @@ export default async function AdminLayout({
           <AdminMenu user={user} />
         </div>
       </header>
-      <section className="max-w-5xl mx-auto mt-20 p-3 py-10">
+      <main className="max-w-5xl mx-auto mt-10 p-3">
         {children}
-      </section>
+      </main>
       <ToastNotification />
 
       <footer className="py-5">
-        <p className="text-center">
-          Todos los Derechos Reservados {new Date().getFullYear()}
+        <p className="text-center text-slate-600 mt-10">
+          Walletrack - Todos los Derechos Reservados {new Date().getFullYear()}
         </p>
       </footer>
     </>
