@@ -22,7 +22,7 @@ export default function AdminMenu({ user }: { user: User }) {
 
   return (
     <Popover className="relative">
-      <PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 p-1 rounded-lg bg-amber-500">
+      <PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 p-1 rounded-lg bg-green-600">
         <Bars3Icon className="w-8 h-8 text-white " />
       </PopoverButton>
 
@@ -40,15 +40,15 @@ export default function AdminMenu({ user }: { user: User }) {
             <p className="text-center">Hola: {user.name} </p>
             <Link
               href="/admin/profile/settings"
-              className="block p-2 hover:text-purple-950"
+              className="block p-2 hover:text-green-700"
             >
               Mi Perfil
             </Link>
-            <Link href="/admin" className="block p-2 hover:text-purple-950">
+            <Link href="/admin" className="block p-2 hover:text-green-700">
               Mis Presupuestos
             </Link>
             <button
-              className="block p-2 hover:text-purple-950"
+              className="block p-2 hover:text-green-700 w-full text-left"
               type="button"
               onClick={handleLogout}
               disabled={isPending}
