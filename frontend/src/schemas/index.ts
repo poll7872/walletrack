@@ -47,6 +47,15 @@ export const ResetPasswordSchema = z
     path: ["password_confirmation"],
   });
 
+export const DraftBudgetSchema = z.object({
+  name: z
+    .string()
+    .min(1, { error: "El Nombre del presupuesto es obligatorio" }),
+  amount: z.coerce
+    .number({ error: "Cantidad no válida" })
+    .min(1, { error: "Cantidad no válida" }),
+});
+
 export const SuccessSchema = z.object({
   message: z.string(),
 });
@@ -61,4 +70,16 @@ export const UserSchema = z.object({
   email: z.email(),
 });
 
+export const BudgetAPIResponseSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  amount: z.string(),
+  userId: z.number(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
+});
+
+export const BudgetsAPIResponseSchema = z.array(BudgetAPIResponseSchema);
+
 export type User = z.infer<typeof UserSchema>;
+export type Budget = z.infer<typeof BudgetAPIResponseSchema>;
