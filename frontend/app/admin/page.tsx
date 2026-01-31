@@ -1,4 +1,4 @@
-import BudgetMenu from "@/components/auth/BudgetMenu";
+import BudgetMenu from "@/components/budgets/BudgetMenu";
 import { getToken } from "@/src/auth/token";
 import { BudgetsAPIResponseSchema } from "@/src/schemas";
 import { formatCurrency, formatDate } from "@/src/utils";
@@ -84,9 +84,14 @@ export default async function AdminPage() {
           ))}
         </ul>
       ) : (
-        <p className='text-center mt-10 text-slate-600'>
+        <p className="text-center mt-10 text-slate-600">
           No hay prespuestos aún {""}
-          <Link href={"/admin/budgets/new"} className='text-green-600 font-bold'>Comienza creando uno</Link>
+          <Link
+            href={"/admin/budgets/new"}
+            className="text-green-600 font-bold"
+          >
+            Comienza creando uno
+          </Link>
         </p>
       )}
     </>
