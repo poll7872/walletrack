@@ -17,14 +17,17 @@ export default function RegisterPage() {
 
       <RegisterForm />
 
-        <nav className="mt-8 text-center text-sm">
-            <p className="text-slate-600">
-                ¿Ya tienes una cuenta?{' '}
-                <Link href="/auth/login" className="font-bold text-green-600 hover:text-green-700">
-                    Iniciar Sesión
-                </Link>
-            </p>
-        </nav>
+      <nav className="mt-8 text-center text-sm">
+        <p className="text-slate-600">
+          ¿Ya tienes una cuenta?{" "}
+          <Link
+            href="/auth/login"
+            className="font-bold text-green-600 hover:text-green-700"
+          >
+            Iniciar Sesión
+          </Link>
+        </p>
+      </nav>
     </>
   );
 }
