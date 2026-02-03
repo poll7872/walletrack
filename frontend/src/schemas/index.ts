@@ -56,6 +56,15 @@ export const DraftBudgetSchema = z.object({
     .min(1, { error: "Cantidad no válida" }),
 });
 
+export const PasswordValidationSchema = z
+  .string()
+  .min(1, { error: "La contraseña es obligatoria" });
+
+export const DraftExpenseSchema = z.object({
+  name: z.string().min(1, { error: "El Nombre del gasto es obligatorio" }),
+  amount: z.coerce.number().min(1, { error: "Cantidad no válida" }),
+});
+
 export const SuccessSchema = z.object({
   message: z.string(),
 });
