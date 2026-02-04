@@ -26,11 +26,11 @@ export const ModalContainer = () => {
   const show = showModal ? true : false;
 
   const addExpense = searchParams.get("addExpense");
+  const editExpense = searchParams.get("editExpenseId");
 
   const getComponent = () => {
-    if (addExpense) {
-      return "AddExpense";
-    }
+    if (addExpense) return "AddExpense";
+    if (editExpense) return "EditExpense";
   };
 
   const componentName = getComponent();
