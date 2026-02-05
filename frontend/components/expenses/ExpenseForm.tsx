@@ -1,4 +1,10 @@
-export const ExpenseForm = () => {
+import { DraftExpense } from "@/src/schemas";
+
+type ExpenseFormProps = {
+  expense?: DraftExpense;
+};
+
+export const ExpenseForm = ({ expense }: ExpenseFormProps) => {
   return (
     <>
       <div className="relative">
@@ -8,6 +14,7 @@ export const ExpenseForm = () => {
           type="text"
           placeholder=" "
           name="name"
+          defaultValue={expense?.name}
         />
         <label
           htmlFor="name"
@@ -24,6 +31,7 @@ export const ExpenseForm = () => {
           className="block px-3.5 pb-2.5 pt-4 w-full text-base text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer"
           placeholder=" "
           name="amount"
+          defaultValue={expense?.amount}
         />
         <label
           htmlFor="amount"
