@@ -34,7 +34,7 @@ export const ExpenseMenu = ({ expenseId }: { expenseId: Expense["id"] }) => {
             <MenuItem>
               <button
                 type="button"
-                className="block px-3 py-1 text-sm leading-6 text-gray-900"
+                className="block px-3 py-1 text-sm leading-6 text-gray-900 cursor-pointer"
                 onClick={() =>
                   router.push(`?showModal=true&editExpenseId=${expenseId}`)
                 }
@@ -46,8 +46,10 @@ export const ExpenseMenu = ({ expenseId }: { expenseId: Expense["id"] }) => {
             <MenuItem>
               <button
                 type="button"
-                className="block px-3 py-1 text-sm leading-6 text-red-500"
-                onClick={() => {}}
+                className="block px-3 py-1 text-sm leading-6 text-red-500 cursor-pointer"
+                onClick={() =>
+                  router.push(`?showModal=true&deleteExpenseId=${expenseId}`)
+                }
               >
                 Eliminar Gasto
               </button>
