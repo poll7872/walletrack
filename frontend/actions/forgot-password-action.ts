@@ -26,7 +26,7 @@ export async function forgotPassword(
     };
   }
 
-  const url = `${process.env.API_URL}/auth/forgot-password `;
+  const url = `${process.env.API_URL}/auth/forgot-password`;
   const req = await fetch(url, {
     method: "POST",
     headers: {
