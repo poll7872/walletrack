@@ -1,5 +1,6 @@
 import { Logo } from "@/components/ui/Logo";
 import { ToastNotification } from "@/components/ui/ToastNotification";
+import Link from "next/link";
 
 export default function AuthLayout({
   children,
@@ -8,7 +9,9 @@ export default function AuthLayout({
     <>
       <div className="lg:grid lg:grid-cols-2 lg:h-screen">
         <div className="bg-slate-900 flex flex-col justify-center items-center p-5 lg:h-screen">
-          <Logo />
+          <Link href={"/"}>
+            <Logo />
+          </Link>
           <p className="text-white mt-2 text-center text-lg">
             Toma el control de tus finanzas personales.
           </p>
