@@ -12,6 +12,7 @@
     "@chakra-ui/pin-input": "^2.1.0",
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.11",
     "next": "16.1.4",
     "react": "19.2.3",
     "react-circular-progressbar": "^2.2.0",
