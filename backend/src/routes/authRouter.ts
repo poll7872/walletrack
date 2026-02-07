@@ -88,4 +88,13 @@ router.post(
   AuthController.checkPassword,
 );
 
+router.put(
+  "/user",
+  body("name").notEmpty().withMessage("name is required"),
+  body("email").isEmail().withMessage("email is not valid"),
+  handleInputErrors,
+  authenticate,
+  AuthController.updateCurrentUser,
+);
+
 export default router;
