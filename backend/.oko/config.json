@@ -3,5 +3,8 @@
   "install_type": "project",
   "project_name": "backend",
   "root_path": "/mnt/DATA/Developer/walletrack/backend/.oko",
-  "created_at": "2026-02-14T15:18:05.633384"
+  "created_at": "2026-02-14T15:18:05.633384",
+  "variables": {
+    "base_url": "http://localhost:3000"
+  }
 }

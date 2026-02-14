@@ -1,13 +1,14 @@
 # backend API Docs
 
 > Archivo generado automáticamente por OKO.
-> Actualizado: 2026-02-14T15:18:05
+> Actualizado: 2026-02-14T15:20:44
 
+- **Base URL:** `http://localhost:3000`
 - **Colecciones:** `3`
 
 ## Variables Globales
 
-_Sin variables globales._
+- `base_url` = `http://localhost:3000`
 
 ## Colecciones y Endpoints
 
